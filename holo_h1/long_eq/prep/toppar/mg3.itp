@@ -1,0 +1,7 @@
+[ moleculetype ]
+; Name            nrexcl
+mg3                3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+    1         MG    381     MG     MG     1          2     24.305   ; qtot -1
