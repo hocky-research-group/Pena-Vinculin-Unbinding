@@ -1,0 +1,29 @@
+UNITS LENGTH=A TIME=fs ENERGY=kcal/mol
+
+pp: READ FILE=_TRAJ_.colvar.out VALUES=pp.proj,pp.ext IGNORE_FORCES IGNORE_TIME
+d1: READ FILE=_TRAJ_.colvar.out VALUES=d1.x,d1.y,d1.z IGNORE_FORCES IGNORE_TIME
+cmap: READ FILE=_TRAJ_.colvar.out VALUES=cmap IGNORE_FORCES IGNORE_TIME
+
+
+uwall: UPPER_WALLS ARG=pp.proj AT=77 KAPPA=1000.0 EXP=4 EPS=1 OFFSET=0
+lwall: LOWER_WALLS ARG=pp.proj AT=57 KAPPA=1000.0 EXP=4 EPS=1 OFFSET=0
+wallext: UPPER_WALLS ARG=pp.ext AT=50 KAPPA=1000.0 EXP=4 EPS=1 OFFSET=0
+
+OPES_METAD ...
+ LABEL=opes
+ ARG=pp.proj,pp.ext  # your cv
+ PACE=1000000000 # last bias reweighting
+ TEMP=300.0
+ FILE=_INPUT_.kernels 
+ BARRIER=25
+ BIASFACTOR=15
+ EXTRA_BIAS=uwall.bias,lwall.bias,wallext.bias
+ # SIGMA_MIN=0.034,0.027
+ STATE_RFILE=_INPUT_.state.data
+ STATE_WFILE=_OUTPUT_.state2.data 
+ NLIST
+ RESTART=YES
+... OPES_METAD
+
+PRINT ARG=pp.proj,pp.ext,cmap,opes.bias,uwall.bias,lwall.bias,wallext.bias,d1.* STRIDE=1 FILE=_OUTPUT_.colvar_bias.out 
+ENDPLUMED

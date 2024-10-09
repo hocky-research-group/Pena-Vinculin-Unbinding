@@ -1,0 +1,106 @@
+
+; Include forcefield parameters
+#include "toppar/force_fields/charmm36_aubin.ff/forcefield.itp"
+
+; Include chain topologies
+
+#include "toppar/a1.itp"
+#ifdef POSRES1
+#include "toppar/a1_rest.itp"
+#endif
+#ifdef POSRESALL
+#include "posre_1.itp"
+#endif
+
+#include "toppar/adp1.itp"
+#ifdef POSRESALL
+#include "adp_mg.itp"
+#endif
+#include "toppar/mg1.itp"
+
+#include "toppar/a2.itp"
+#ifdef POSRESALL
+#include "posre_2.itp"
+#endif
+
+#include "toppar/adp2.itp"
+#ifdef POSRESALL
+#include "adp_mg.itp"
+#endif
+#include "toppar/mg2.itp"
+
+#include "toppar/a3.itp"
+#ifdef POSRESALL
+#include "posre_3.itp"
+#endif
+
+#include "toppar/adp3.itp"
+#ifdef POSRESALL
+#include "adp_mg.itp"
+#endif
+#include "toppar/mg3.itp"
+
+#include "toppar/a4.itp"
+#ifdef POSRES4
+#include "toppar/a4_rest.itp"
+#endif
+#ifdef POSRESALL
+#include "posre_4.itp"
+#endif
+
+#include "toppar/adp4.itp"
+#ifdef POSRESALL
+#include "adp_mg.itp"
+#endif
+#include "toppar/mg4.itp"
+
+#include "toppar/a5.itp"
+#ifdef POSRESALL
+#include "posre_5.itp"
+#endif
+
+#include "toppar/adp5.itp"
+#ifdef POSRESALL
+#include "adp_mg.itp"
+#endif
+#include "toppar/mg5.itp"
+
+#include "toppar/vt.itp"
+#ifdef POSRESALL
+#include "posre_vinculin.itp"
+#endif
+
+#ifdef POSRESVT
+#include "posre_vincBB.itp"
+#endif
+; Include water topology
+#include "toppar/force_fields/charmm36_aubin.ff/tip3p.itp"
+
+; Include topology for ions
+#include "toppar/force_fields/charmm36_aubin.ff/ions.itp"
+
+[ system ]
+; Name
+Actin-holoVinculintail in water
+
+[ molecules ]
+; Compound        #mols
+a1                  1
+adp1                1
+mg1		    1	
+a2                  1
+adp2                1
+mg2		    1	
+a3                  1
+adp3                1
+mg3		    1	
+a4                  1
+adp4                1
+mg4		    1	
+a5                  1
+adp5                1
+mg5		    1	
+vt                  1
+SOL         87176
+NA               146
+CL               90
