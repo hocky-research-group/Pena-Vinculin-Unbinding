@@ -1,13 +1,16 @@
 import numpy as np
-
+import sys
+# wham for python adapted from PLUMED at 
+# 
 def wham(bias,
         *,
         frame_weight=None,
         traj_weight=None,
         T: float = 1.0,
-        maxiter: int = 1000,
+        maxiter: int = 10000,
         threshold: float = 1e-40,
-        verbose: bool = False):
+        verbose: bool = False,
+        warn: bool = True):
 
     nframes = bias.shape[0]
     ntraj = bias.shape[1]
@@ -56,6 +59,9 @@ def wham(bias,
     logW = np.log(weight) + shifts1
 
     if verbose:
-        sys.stderr.write("WHAM: end")
+        sys.stderr.write(f"WHAM: ++++END+++++ \n eps: {eps}")
+    if nit==maxiter-1 and warn:
+        sys.stderr.write(f"WHAM: WARNING did not reach threshold \n eps: {eps}")
+        
 
     return {"logW":logW, "logZ":np.log(Z)-shifts0, "nit":nit, "eps":eps}

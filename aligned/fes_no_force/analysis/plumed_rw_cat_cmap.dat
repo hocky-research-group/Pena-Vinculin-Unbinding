@@ -1,11 +1,12 @@
 UNITS LENGTH=A TIME=fs ENERGY=kcal/mol
 #----Read colvars in-------
-proj: READ FILE=cmap_highE/COLVAR_cat__FORCE_.dat  VALUES=proj IGNORE_FORCES IGNORE_TIME
-ext: READ FILE=cmap_highE/COLVAR_cat__FORCE_.dat  VALUES=ext IGNORE_FORCES IGNORE_TIME
-cmap: READ FILE=cmap_highE/CMAP_cat__FORCE_.dat  VALUES=cmap IGNORE_FORCES IGNORE_TIME
+proj: READ FILE=outputs/COLVAR_cat__FORCE_.dat  VALUES=proj IGNORE_FORCES IGNORE_TIME
+ext: READ FILE=outputs/COLVAR_cat__FORCE_.dat  VALUES=ext IGNORE_FORCES IGNORE_TIME
+cmap: READ FILE=outputs/COLVAR_cat__FORCE_.dat  VALUES=cmap IGNORE_FORCES IGNORE_TIME
+
 #----Read biases ------- 
-wall: READ FILE=cmap_highE/WALL_cat__FORCE_.dat VALUES=totalwall.bias IGNORE_FORCES IGNORE_TIME
-wham: READ FILE=cmap_highE/BIAS_cat__FORCE_.dat VALUES=wham.bias IGNORE_FORCES IGNORE_TIME
+wall: READ FILE=outputs/WALL_cat__FORCE_.dat VALUES=totalwall.bias IGNORE_FORCES IGNORE_TIME
+wham: READ FILE=outputs/BIAS_cat__FORCE_.dat VALUES=wham.bias IGNORE_FORCES IGNORE_TIME
 
 #----get weights-------
 weights: REWEIGHT_BIAS ARG=wham.bias,wall.bias TEMP=300.0
@@ -31,12 +32,12 @@ fftwocv: CONVERT_TO_FES GRID=proj_ext TEMP=300 MINTOZERO
 ffprojcmap: CONVERT_TO_FES GRID=proj_cmap TEMP=300 MINTOZERO
 ffextcmap: CONVERT_TO_FES GRID=ext_cmap TEMP=300 MINTOZERO
 
-DUMPGRID GRID=feproj  FILE=cmap_highE/F_FORCE__fes_proj_rw.dat FMT=%.24e
-DUMPGRID GRID=feext  FILE=cmap_highE/F_FORCE__fes_ext_rw.dat FMT=%.24e
-DUMPGRID GRID=fecmap  FILE=cmap_highE/F_FORCE__fes_cmap_rw.dat FMT=%.24e
+DUMPGRID GRID=feproj  FILE=outputs/F_FORCE__fes_proj_rw.dat FMT=%.24e
+DUMPGRID GRID=feext  FILE=outputs/F_FORCE__fes_ext_rw.dat FMT=%.24e
+DUMPGRID GRID=fecmap  FILE=outputs/F_FORCE__fes_cmap_rw.dat FMT=%.24e
 
-DUMPGRID GRID=fftwocv FILE=cmap_highE/F_FORCE__fes_projext_rw.dat FMT=%.24e
-DUMPGRID GRID=ffprojcmap  FILE=cmap_highE/F_FORCE__fes_projcmap_rw.dat FMT=%.24e
-DUMPGRID GRID=ffextcmap  FILE=cmap_highE/F_FORCE__fes_extcmap_rw.dat FMT=%.24e
+DUMPGRID GRID=fftwocv FILE=outputs/F_FORCE__fes_projext_rw.dat FMT=%.24e
+DUMPGRID GRID=ffprojcmap  FILE=outputs/F_FORCE__fes_projcmap_rw.dat FMT=%.24e
+DUMPGRID GRID=ffextcmap  FILE=outputs/F_FORCE__fes_extcmap_rw.dat FMT=%.24e
 
-PRINT ARG=proj,ext,cmap,wham.bias,weights STRIDE=1 FILE=cmap_highE/COLVAR_cat__FORCE__weights.out
+PRINT ARG=proj,ext,cmap,wham.bias,weights STRIDE=1 FILE=outputs/COLVAR_cat__FORCE__weights.out
