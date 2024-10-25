@@ -1,12 +1,15 @@
-# computational assessment of factin-vinculin unbinding kinetics 
+# Direct computational assessment of vinculin-actin unbinding kinetics reveals catch bonding behavior
+[//]: # (Badges)
+[![Static Badge](https://img.shields.io/badge/DOI-10.1101%2F2024.10.10.617580-red)]( https://doi.org/10.1101/2024.10.10.617580)
 ## Table of contents
 * [Description](#Description)
 * [Directories](#Directories)
-* [Molinfo](#Residue)
+* [Molinfo](#Residue-Info-for-models-of-Vt)
 
 ## Description
-This repository contains inputs for simulations performed in the FActin-Vinculin kinetics project. Furthermore, code to generate figures in the main text is also included. 
-All relevant files for the simulations of the models described in the main text can be found in the apropiate directories. 
+This repository contains inputs for simulations performed in the manuscript titled "A direct computational assessment of vinculin-actin unbinding kinetics reveals catch bonding behavior". 
+
+All relevant files for the simulations of the models described in the main text can be found in the apropiate directories. Sample analysis code to compute FESs are included in the `fes_no_force/analysis` directory of each model, code to compute unbinding lifetimes are included in the `rates/analysis` directory of each model. Furthermore, code to generate figures in the main text is also included.
 ## Directories
 The directories in this repo are described below.
 
