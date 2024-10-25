@@ -25,7 +25,7 @@ both `holo` and `aligned` directories contain the following:
 ```
 conda env create -f env_requirements.yml
 ```` 
-$\color{#00FF00}{Movie~of~trajectories~below~(click~on~image)}$
+$\color{#00FF00}{Movie\ of\ trajectories\ below\ (click \ on \ image)}$
 [![image alt text](https://img.youtube.com/vi/zhm1VcawSHU/0.jpg)](http://www.youtube.com/watch?v=zhm1VcawSHU "vinculin_actin complex")
 ## Residue Info for models of Vt 
 
