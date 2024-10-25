@@ -20,7 +20,11 @@ both `holo` and `aligned` directories contain the following:
 - long_eq
 - rates
 
-`figures_ms`: contains notebook that was used to generate FES and rates figures, notebook reads data from outputs directory of each model
+`figures_ms`: contains notebook that was used to generate FES and rates figures, notebook reads data from outputs directory of each model. Additionally, conda environment containing python packages used in jupyter notebooks can be created using the yml file `env_requirements.yml` in the `requirements` directory.
+
+```
+conda env create -f env_requirements.yml
+```` 
 
 ## Residue Info for models of Vt 
 
