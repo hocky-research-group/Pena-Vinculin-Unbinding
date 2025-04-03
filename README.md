@@ -31,17 +31,17 @@ $\color{#00FF00}{Movie\ of\ trajectories\ below\ (click \ on \ image)}$
 
 `holo`: 
 - hVt: residue_ids 981 to 1131 (151 total) (index 29356 to 31745)
-- H2_H5: residue_ids 981 to 1120 (29356 to 31546)
+- H2_H5: residue_ids 986 to 1120 (29423 to 31546)
 - H1: NONE
 
 `aligned`: 
 - aVt: residue_ids 882 to 1061 (180 total) (index 29356 to 32208)
-- H2_H5: residue_ids 913 to 1052 (29849 to 32037)
-- H1: residue_ids 882 to 912 (29356 to 29848)
+- H2_H5: residue_ids 918 to 1052 (29914 to 32037)
+- H1: residue_ids 882 to 917 (29356 to 29913)
   
 
 `holo_h1`: 
-- hh1Vt:residue_ids 882 to 912,981 to 1131 (182 total) (29356 to 32236)
-- H2H5: residue_ids 981 to 1120  (29849 to 32037)
-- H1: residue 882 to 912 (label) (29356 to 29848)
+- hh1Vt:residue_ids 882 to 917,981 to 1131 (182 total) (index 29356 to 32236)
+- H2H5: residue_ids 986 to 1120  (29914 to 32037)
+- H1: residue 882 to 917 (label) (29356 to 29913)
   
