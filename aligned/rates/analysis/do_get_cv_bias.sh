@@ -15,7 +15,7 @@ do
 	for i in `seq 26 1 ${max_run}`
         do
                 echo "force: ${f} run: ${i}"
-		#outputprefix=${data_dir}/${label}_pn_${f}/${i}/${i}_rate_pullVt
-                #python extract_cv_bias_column.py ${outputprefix}.colvar.out ${outputprefix}.opes.out ${outputprefix}.cvs_bias.dat
+		outputprefix=${data_dir}/${label}_pn_${f}/${i}/${i}_rate_pullVt
+                python get_colvar_bias.py ${outputprefix}.colvar.out ${outputprefix}.opes.out ${outputprefix}.cvs_bias.dat
         done
 done
