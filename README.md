@@ -21,13 +21,16 @@ both `holo` and `aligned` directories contain the following:
 
 `figures_ms`: contains notebook that was used to generate FES and rates figures, notebook reads data from outputs directory of each model. Additionally, conda environment containing python packages used in jupyter notebooks can be created using the yml file `env_requirements.yml` in the `requirements` directory.
 
-There is also an accompanying set of raw data in the "Trajectories" folder available from [NYU UltraViolet](https://doi.org/10.58153/c964p-ghe78)
-
 ```
 conda env create -f env_requirements.yml
 ```` 
 $\color{#00FF00}{Movie\ of\ trajectories\ below\ (click \ on \ image)}$
+
 [![image alt text](https://img.youtube.com/vi/zhm1VcawSHU/0.jpg)](http://www.youtube.com/watch?v=zhm1VcawSHU "vinculin_actin complex")
+
+## Raw data
+There is also an accompanying set of raw data in the "Trajectories" folder available from [NYU UltraViolet](https://doi.org/10.58153/c964p-ghe78)
+
 ## Residue Info for models of Vt 
 
 `holo`: 
